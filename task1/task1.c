@@ -41,7 +41,9 @@ int dial(char *rotations[], int rotations_len){
 }
 
 int main(int argc, char *argv[]){
-    if(argc > 2){
+    if(argc > 2) {
         printf("result: %d", dial(argv+1, argc-1));
+        return 0;
     }
+    return 1;
 }

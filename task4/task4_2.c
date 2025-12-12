@@ -72,7 +72,7 @@ int find_paper_positions(int row_count, char* rows[]) {
             printf("\n");
 
             if (i >= 1) {
-                strcpy(rows[i-1], prev_changed_row);
+                rows[i-1] = prev_changed_row;
             }
 
             if (i<row_count) {
@@ -94,6 +94,10 @@ int find_paper_positions(int row_count, char* rows[]) {
     }
 
     }while (counter != prev_counter);
+
+    for (int i = 0; i < row_count; i++) {
+        free(rows[i]);
+    }
 
     return counter;
 }
